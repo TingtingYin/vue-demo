@@ -12,7 +12,9 @@
         <button @click="submitData">提交数据</button>
         <ul>
             <todo-item v-bind:content="item"
-                       v-for="item in list">
+                       @delete="deleteItem"
+                       v-bind:index="index"
+                       v-for="(item,index) in list">
             </todo-item>
         </ul>
     </div>
@@ -24,8 +26,13 @@
     //     template : '<li>{{content}}</li>'
     // });
     var TodoItem = {
-        props : ['content'],
-        template : '<li>{{content}}</li>'
+        props : ['content','index'],
+        template : '<li @click="clickItem">{{content}}</li>',
+        methods:{
+            clickItem : function (index) {
+                this.$emit('delete',this.index);
+            }
+        }
     }
     var app = new Vue({
         el : '#app',
@@ -40,6 +47,9 @@
             submitData : function () {
                 this.list.push(this.inputValue);
                 this.inputValue = '';
+            },
+            deleteItem : function (index) {
+                this.list.splice(index,1);
             }
         }
     });

@@ -13,4 +13,5 @@ https://cn.vuejs.org/v2/guide/
       
    ```
 7. vue方式-全局组件-list
-8. vue方式-局部组件-list  
+8. vue方式-局部组件-list 
+9. vue方式-子向父传值 
