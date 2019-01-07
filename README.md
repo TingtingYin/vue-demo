@@ -28,8 +28,14 @@ https://cn.vuejs.org/v2/guide/
     v-text
     v-html
     ```
-14. 计算属性
+14. 计算属性computed / 方法methods /监听器watch
     ```
-    内置了缓存，当相关数据没有发生变化的时候，
+    computed内置了缓存，当相关数据没有发生变化的时候，
     直接使用缓存
+    
+    methods没有内置缓存，性能没有computed好
+    
+    watch内置了缓存，但写法比computed复杂
+    {{fullname}}
+    {{mFullname()}}
     ```

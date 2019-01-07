@@ -7,7 +7,9 @@
 </head>
 <body>
     <div id="app">
-        {{fullname}}
+        <!--{{fullname}}-->
+        <!--{{mFullname()}}-->
+        {{wFullname}}
         {{age}}
     </div>
     <script>
@@ -16,12 +18,30 @@
             data : {
                 firstname : 'Yin',
                 lastname : 'tingting',
+                wFullname : 'Yin tingting',
                 age : 88
             },
-            computed : {
-                fullname : function () {
-                    console.log('计算了一次');
-                    return this.firstname + ' '+this.lastname;
+            // computed : {
+            //     fullname : function () {
+            //         console.log('计算了一次');
+            //         return this.firstname + ' '+this.lastname;
+            //     }
+            // },
+            // methods : {
+            //     mFullname : function () {
+            //         console.log('计算了一次');
+            //         return this.firstname + ' '+this.lastname;
+            //     }
+            // },
+            watch : {
+                firstname : function () {
+                    console.log("firstname 变化");
+                     this.wFullname = this.firstname + ' ' + this.lastname;
+                },
+                lastname : function () {
+                    console.log("lastname 变化")
+                    this.wFullname = this.firstname + ' ' + this.lastname;
+
                 }
             }
         })
