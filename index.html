@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="vue.js"></script>
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="inputValue">
-        <button v-on:click="submitData">提交数据</button>
-        <ul>
-            <li v-for="item in list">{{item}}</li>
+        <input type="text" id="inputValue">
+        <button id="submitBtn">提交数据</button>
+        <ul id="showCon">
         </ul>
     </div>
 
 </body>
 <script>
-
-    var app = new Vue({
-        el : '#app',
-        data : {
-            list : [],
-            inputValue : ''
+    function Page() {
+    }
+    $.extend(Page.prototype,{
+        init : function () {
+           this.bindEvent();
         },
-        methods: {
-            submitData : function () {
-               this.list.push(this.inputValue);
-               this.inputValue = '';
-            }
+        bindEvent : function () {
+            $('#submitBtn').on('click',$.proxy(this.handleBtnClick,this));
+        },
+        handleBtnClick : function () {
+            var input = $('#inputValue');
+            var newCon = input.val();
+            var showCon = $('#showCon');
+            showCon.append('<li>' + newCon + '</li>');
+            input.val('');
         }
     });
-
+    var page = new Page();
+    page.init();
 </script>
 </html>
