@@ -50,3 +50,18 @@ https://cn.vuejs.org/v2/guide/
     v-show : 如果值为false,在dom中，只是把display设置为none了
     ```
 21. vue-if与vue-else
+22. vue中组件复用问题
+    ```
+     <div id="app">
+            <div v-if="show">
+              用户名:  <input />
+            </div>
+            <div v-else>
+                邮箱:  <input />
+            </div>
+     </div>
+     
+     当用户名和邮箱切换时，如果用户名已填写，那么
+     邮箱出现的时候，之前的文字仍然存在。怎么解决？
+     加key
+    ```

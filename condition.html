@@ -7,16 +7,19 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="show === 'a'">This is A.</div>
-        <div v-else-if="show === 'b'">This is B.</div>
-        <div v-else>Bye</div>
+        <div v-if="show">
+          用户名:  <input key="username"/>
+        </div>
+        <div v-else>
+            邮箱:  <input key="email"/>
+        </div>
     </div>
     <script>
         var app = new Vue({
             el : '#app',
             data : {
-                show : 'a',
-                content : 'hello'
+                show : false
+
             }
         })
     </script>
