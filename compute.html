@@ -9,7 +9,7 @@
     <div id="app">
         <!--{{fullname}}-->
         <!--{{mFullname()}}-->
-        {{wFullname}}
+        {{fullname}}
         {{age}}
     </div>
     <script>
@@ -18,32 +18,22 @@
             data : {
                 firstname : 'Yin',
                 lastname : 'tingting',
-                wFullname : 'Yin tingting',
                 age : 88
             },
-            // computed : {
-            //     fullname : function () {
-            //         console.log('计算了一次');
-            //         return this.firstname + ' '+this.lastname;
-            //     }
-            // },
-            // methods : {
-            //     mFullname : function () {
-            //         console.log('计算了一次');
-            //         return this.firstname + ' '+this.lastname;
-            //     }
-            // },
-            watch : {
-                firstname : function () {
-                    console.log("firstname 变化");
-                     this.wFullname = this.firstname + ' ' + this.lastname;
-                },
-                lastname : function () {
-                    console.log("lastname 变化")
-                    this.wFullname = this.firstname + ' ' + this.lastname;
-
+            computed : {
+                fullname : {
+                    get : function () {
+                        return this.firstname + ' '+this.lastname;
+                    },
+                    // app.fullname='yin'时执行
+                    set : function (value) {
+                       var names = value.split(' ');
+                       this.firstname = names[0];
+                       this.lastname = names[1];
+                    }
                 }
             }
+
         })
     </script>
     <!--计算了一次-->

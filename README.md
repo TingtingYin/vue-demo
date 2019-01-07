@@ -39,3 +39,4 @@ https://cn.vuejs.org/v2/guide/
     {{fullname}}
     {{mFullname()}}
     ```
+15. 计算属性的get,set方法
