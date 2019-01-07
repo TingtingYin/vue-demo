@@ -8,22 +8,27 @@
         .activated{
             background: red;
         }
+        .test{
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
     <div id="app"
-         :class="{activated : isActivated}"
+         :class="[activated,test]"
          @click="changeBackColor"
     >yin</div>
     <script>
         var app = new Vue({
             el : '#app',
             data : {
-                isActivated : false
+                activated : '',
+                test : 'test'
             },
             methods : {
                 changeBackColor : function () {
-                    this.isActivated = !this.isActivated;
+
+                    this.activated = this.activated === "activated"?"":"activated";
                 }
             }
         })
