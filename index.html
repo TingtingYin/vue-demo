@@ -11,9 +11,9 @@
         <input type="text" v-model="inputValue">
         <button @click="submitData">提交数据</button>
         <ul>
-            <todo-item v-bind:content="item"
+            <todo-item :content="item"
                        @delete="deleteItem"
-                       v-bind:index="index"
+                       :index="index"
                        v-for="(item,index) in list">
             </todo-item>
         </ul>
