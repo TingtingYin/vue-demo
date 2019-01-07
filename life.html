@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">{{content}}</div>
+    <script>
+        var app = new Vue({
+            el : '#app',
+            data : {
+                content : 'xixi'
+            },
+            beforeCreate: function () {
+                console.log('beforeCreate');
+            },
+            created: function () {
+                console.log('created');
+            },
+            beforeMount: function () {
+                console.log(this.$el)
+                console.log('beforeMount');
+            },
+            mounted: function () {
+                console.log('mounted');
+            },
+            beforeDestroy: function () {
+                console.log('beforeDestroy');
+            },
+            destroyed: function () {
+                console.log('destroyed');
+            },
+            beforeUpdate: function () {
+                console.log('beforeUpdate');
+            },
+            updated: function () {
+                console.log('updated');
+            }
+        });
+    </script>
+
+</body>
+</html>

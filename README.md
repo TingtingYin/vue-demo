@@ -16,3 +16,9 @@ https://cn.vuejs.org/v2/guide/
 8. vue方式-局部组件-list 
 9. vue方式-子向父传值 
 10. v-bind: 可简写成 :
+11. 浏览器console执行app(变量名).$destory()会销毁组件
+12. 生命周期函数
+    ```
+    destory方法在console执行app(变量名).$destory()
+    update方法在console执行app.$data.content='xx';
+    ```
