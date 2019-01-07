@@ -49,3 +49,4 @@ https://cn.vuejs.org/v2/guide/
     v-if : 如果值为false,根本不存在于dom中
     v-show : 如果值为false,在dom中，只是把display设置为none了
     ```
+21. vue-if与vue-else
