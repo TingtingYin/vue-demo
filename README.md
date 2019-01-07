@@ -22,3 +22,9 @@ https://cn.vuejs.org/v2/guide/
     destory方法在console执行app(变量名).$destory()
     update方法在console执行app.$data.content='xx';
     ```
+13. vue模板语法
+    ```
+    {{}}
+    v-text
+    v-html
+    ```
