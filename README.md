@@ -12,4 +12,5 @@ https://cn.vuejs.org/v2/guide/
     MVVM : M层，V层，VM层（vue),开发集中写数据的操作即可
       
    ```
-7. vue方式-全局组件-list 
+7. vue方式-全局组件-list
+8. vue方式-局部组件-list  
