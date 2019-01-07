@@ -40,7 +40,7 @@ https://cn.vuejs.org/v2/guide/
     {{mFullname()}}
     ```
 15. 计算属性的get,set方法
-16. vue的样式绑定-第一种方式-class
-17. vue的样式绑定-第二种方式-class
-18. vue的样式绑定-第二种方式-style
-19. vue的样式绑定-第二种方式-style
+16. vue的样式绑定-第一种方式-class-对象
+17. vue的样式绑定-第二种方式-class-数组
+18. vue的样式绑定-第二种方式-style-对象
+19. vue的样式绑定-第二种方式-style-数组
