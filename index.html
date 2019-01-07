@@ -10,13 +10,16 @@
     <div>{{content}}</div>
 </body>
 <script>
-    // var dom = document.getElementById("app");
-    // dom.innerHTML = 'hello yin';
-    var app = new Vue({
-        el : '#app',
-        data : {
-            content : 'hello yin1'
-        }
-    });
+    var dom = document.getElementById("app");
+    dom.innerHTML = 'hello yin';
+    setTimeout(function () {
+        dom.innerHTML = '2 seconds later';
+    },2000);
+    // var app = new Vue({
+    //     el : '#app',
+    //     data : {
+    //         content : 'hello yin1'
+    //     }
+    // });
 </script>
 </html>
