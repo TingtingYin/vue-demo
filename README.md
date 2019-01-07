@@ -69,9 +69,20 @@ https://cn.vuejs.org/v2/guide/
 24. list中通过下标操作数组，页面中的数据是不会变的
 ```
 什么情况下改变数组时页面也跟着变化？
-1. 遍历数据，比如splice
+1. 用变异方法，比如splice，pop,push
 2. 改变数组的引用
+3. set方法
 ```
 25. template与div的区别
     - template标签不显示
-26. 对象循环 ： 添加对象某个属性，页面不会变。只有改变对象的引用才行
+26. 对象循环 ： 添加对象某个属性，页面不会变。
+    - 改变对象的引用才行
+    - 用vue的set方法
+    ```
+    对象：
+    Vue.set(vm.userInfo,'address','beijing')
+    vm.$set(vm.userInfo,'address','beijing')
+    数组：
+    Vue.set(vm.list,1,5): 索引是1的值改为5
+    vm.$set(vm.list,1,5)
+    ```
