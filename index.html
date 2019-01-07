@@ -8,32 +8,33 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" id="inputValue">
-        <button id="submitBtn">提交数据</button>
-        <ul id="showCon">
+        <input type="text" v-model="inputValue">
+        <button @click="submitData">提交数据</button>
+        <ul>
+            <todo-item v-bind:content="item"
+                       v-for="item in list">
+            </todo-item>
         </ul>
     </div>
 
 </body>
 <script>
-    function Page() {
-    }
-    $.extend(Page.prototype,{
-        init : function () {
-           this.bindEvent();
+    Vue.component('TodoItem',{
+        props : ['content'],
+        template : '<li>{{content}}</li>'
+    });
+    var app = new Vue({
+        el : '#app',
+        data : {
+           list : [] ,
+            inputValue : ''
         },
-        bindEvent : function () {
-            $('#submitBtn').on('click',$.proxy(this.handleBtnClick,this));
-        },
-        handleBtnClick : function () {
-            var input = $('#inputValue');
-            var newCon = input.val();
-            var showCon = $('#showCon');
-            showCon.append('<li>' + newCon + '</li>');
-            input.val('');
+        methods : {
+            submitData : function () {
+                this.list.push(this.inputValue);
+                this.inputValue = '';
+            }
         }
     });
-    var page = new Page();
-    page.init();
 </script>
 </html>

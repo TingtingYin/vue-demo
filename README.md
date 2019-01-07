@@ -10,5 +10,6 @@ https://cn.vuejs.org/v2/guide/
     ```
     MVP : jquery方式，dom操作占了很大一部分
     MVVM : M层，V层，VM层（vue),开发集中写数据的操作即可
-    
-    ```
+      
+   ```
+7. vue方式-全局组件-list 
