@@ -66,3 +66,11 @@ https://cn.vuejs.org/v2/guide/
      加key
     ```
 23. list中最好设置一个唯一的key,性能最高，最好不要用index
+24. list中通过下标操作数组，页面中的数据是不会变的
+```
+什么情况下改变数组时页面也跟着变化？
+1. 遍历数据，比如splice
+2. 改变数组的引用
+```
+25. template与div的区别
+    - template标签不显示
