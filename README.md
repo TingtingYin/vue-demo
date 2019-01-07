@@ -74,3 +74,4 @@ https://cn.vuejs.org/v2/guide/
 ```
 25. template与div的区别
     - template标签不显示
+26. 对象循环 ： 添加对象某个属性，页面不会变。只有改变对象的引用才行
