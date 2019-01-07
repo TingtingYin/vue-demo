@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{fullname}}
+        {{age}}
+    </div>
+    <script>
+        var app = new Vue({
+            el : '#app',
+            data : {
+                firstname : 'Yin',
+                lastname : 'tingting',
+                age : 88
+            },
+            computed : {
+                fullname : function () {
+                    console.log('计算了一次');
+                    return this.firstname + ' '+this.lastname;
+                }
+            }
+        })
+    </script>
+    <!--计算了一次-->
+    <!--17:48:51.338 vue.js:8649 Download the Vue Devtools extension for a better development experience:-->
+    <!--https://github.com/vuejs/vue-devtools-->
+    <!--17:48:51.339 vue.js:8658 You are running Vue in development mode.-->
+    <!--Make sure to turn on production mode when deploying for production.-->
+    <!--See more tips at https://vuejs.org/guide/deployment.html-->
+    <!--17:49:11.645 app.$data.age=66-->
+    <!--17:49:11.656 66-->
+    <!--17:49:38.571 app.$data.firstname='Du'-->
+    <!--17:49:38.572 compute.html?_ijt=g1etuftbeitlttc2kprjs86si2:23 计算了一次-->
+    <!--17:49:38.580 "Du"-->
+
+
+</body>
+</html>
