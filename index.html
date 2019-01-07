@@ -6,23 +6,30 @@
     <script src="vue.js"></script>
 </head>
 <body>
-    <div id="app">{{content}}</div>
-    <div>{{content}}</div>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <button v-on:click="submitData">提交数据</button>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+    </div>
+
 </body>
 <script>
-    // var dom = document.getElementById("app");
-    // dom.innerHTML = 'hello yin';
-    // setTimeout(function () {
-    //     dom.innerHTML = '2 seconds later';
-    // },2000);
+
     var app = new Vue({
         el : '#app',
         data : {
-            content : 'hello yin1'
+            list : [],
+            inputValue : ''
+        },
+        methods: {
+            submitData : function () {
+               this.list.push(this.inputValue);
+               this.inputValue = '';
+            }
         }
     });
-    setTimeout(function () {
-        app.$data.content = '2 seconds later';
-    },2000)
+
 </script>
 </html>
