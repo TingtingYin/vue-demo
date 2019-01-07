@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <script src="vue.js"></script>
+    <style>
+        .activated{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"
+         :class="{activated : isActivated}"
+         @click="changeBackColor"
+    >yin</div>
+    <script>
+        var app = new Vue({
+            el : '#app',
+            data : {
+                isActivated : false
+            },
+            methods : {
+                changeBackColor : function () {
+                    this.isActivated = !this.isActivated;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
