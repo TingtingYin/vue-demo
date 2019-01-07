@@ -65,3 +65,4 @@ https://cn.vuejs.org/v2/guide/
      邮箱出现的时候，之前的文字仍然存在。怎么解决？
      加key
     ```
+23. list中最好设置一个唯一的key,性能最高，最好不要用index

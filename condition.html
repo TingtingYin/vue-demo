@@ -7,18 +7,34 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="show">
-          用户名:  <input key="username"/>
-        </div>
-        <div v-else>
-            邮箱:  <input key="email"/>
-        </div>
+       <div v-for="(item , index) of list" :key="item.id">
+           {{index}}-{{item.text}}
+       </div>
     </div>
     <script>
         var app = new Vue({
             el : '#app',
             data : {
-                show : false
+                list : [
+                    {
+                        id : '20001',
+                        text : 'yin'
+                    },
+                    {
+                        id : '20002',
+                        text : 'xiao'
+                    },
+                    {
+                        id : '20003',
+                        text : 'yang'
+                    },
+                    {
+                        id : '20004',
+                        text : 'du'
+                    },
+
+
+                ]
 
             }
         })
