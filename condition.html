@@ -7,14 +7,15 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="show">{{content}}</div>
+        <div v-if="show === 'a'">This is A.</div>
+        <div v-else-if="show === 'b'">This is B.</div>
         <div v-else>Bye</div>
     </div>
     <script>
         var app = new Vue({
             el : '#app',
             data : {
-                show : false,
+                show : 'a',
                 content : 'hello'
             }
         })
