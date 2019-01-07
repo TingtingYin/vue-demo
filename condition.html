@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>condition</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="show">{{content}}</div>
+        <div v-show="show">{{content}}</div>
+    </div>
+    <script>
+        var app = new Vue({
+            el : '#app',
+            data : {
+                show : false,
+                content : 'hello'
+            }
+        })
+    </script>
+</body>
+</html>

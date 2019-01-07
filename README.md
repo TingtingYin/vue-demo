@@ -44,3 +44,8 @@ https://cn.vuejs.org/v2/guide/
 17. vue的样式绑定-第二种方式-class-数组
 18. vue的样式绑定-第二种方式-style-对象
 19. vue的样式绑定-第二种方式-style-数组
+20. vue中的条件渲染
+    ```
+    v-if : 如果值为false,根本不存在于dom中
+    v-show : 如果值为false,在dom中，只是把display设置为none了
+    ```
