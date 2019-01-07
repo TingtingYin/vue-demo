@@ -15,20 +15,22 @@
 </head>
 <body>
     <div id="app"
-         :class="[activated,test]"
+         :style="backStyle"
          @click="changeBackColor"
     >yin</div>
     <script>
         var app = new Vue({
             el : '#app',
             data : {
-                activated : '',
-                test : 'test'
+                backStyle : {
+                    color : 'red'
+                }
             },
             methods : {
                 changeBackColor : function () {
+                this.backStyle.color=this.backStyle.color==='red'?
+                    'black':'red';
 
-                    this.activated = this.activated === "activated"?"":"activated";
                 }
             }
         })
