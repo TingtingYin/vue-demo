@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="vue.js"></script>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">{{content}}</div>
+    <div>{{content}}</div>
 </body>
 <script>
-    var dom = document.getElementById("app");
-    dom.innerHTML = 'hello yin';
+    // var dom = document.getElementById("app");
+    // dom.innerHTML = 'hello yin';
+    var app = new Vue({
+        el : '#app',
+        data : {
+            content : 'hello yin1'
+        }
+    });
 </script>
 </html>
