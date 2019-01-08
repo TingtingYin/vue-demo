@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dynamic</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <component :is="type"></component>
+        <one v-if="type==='one'"></one>
+        <two v-if="type==='two'"></two>
+        <button @click="change">改变</button>
+    </div>
+    <script>
+        Vue.component('one',{
+            template : '<div>one</div>'
+        })
+        Vue.component('two',{
+            template : '<div>two</div>'
+        })
+        var root = new Vue({
+            el : '#root',
+            data : {
+                type : 'one'
+            },
+            methods : {
+                change : function () {
+                    this.type = this.type === 'one'?'two':'one';
+                }
+            }
+        })
+    </script>
+</body>
+</html>

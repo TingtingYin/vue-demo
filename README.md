@@ -153,3 +153,4 @@ https://cn.vuejs.org/v2/guide/
     ```
 38. slot-父向子传递dom
 39. 作用域插槽
+40. 动态组件
