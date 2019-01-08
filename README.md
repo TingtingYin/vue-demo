@@ -157,3 +157,4 @@ https://cn.vuejs.org/v2/guide/
 41. v-once:可以提高效率
     动态组件不停地创建组件，销毁组件，而v-once把组件放内存中，
     下次就不用创建了，提高性能
+42. transition动画

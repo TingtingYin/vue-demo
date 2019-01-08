@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transaction</title>
+    <script src="vue.js"></script>
+    <style>
+        .v-enter, .v-leave-to{
+            opacity : 0
+        }
+        .v-enter-active, .v-leave-active{
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <transition>
+            <div v-if="show">hello yin</div>
+        </transition>
+
+        <button @click="click">切换</button>
+    </div>
+    <script>
+        var root = new Vue({
+            el : '#root',
+            data : {
+                show : true
+            },
+            methods : {
+                click : function () {
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
