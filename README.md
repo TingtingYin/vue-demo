@@ -134,3 +134,7 @@ https://cn.vuejs.org/v2/guide/
 28. 子组件的data是个function
 29. vue中怎么操作dom-div
 30. vue中怎么操作dom-自定义组件
+31. 父组件向子组件传值
+    - :count="0" 传递的是数字
+    -  count="0" 传递的是字符串
+    - 子组件不能修改父组件传的值,只能创建副本，修改副本

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <counter :count="1"></counter>
+        <counter :count="2"></counter>
+    </div>
+    <script>
+        var counter = {
+            props:['count'],
+            data : function(){
+               return {
+                   num : this.count
+               }
+            },
+            template : '<div @click="add">{{num}}</div>',
+            methods : {
+                add : function () {
+                    this.num ++;
+                }
+            }
+        }
+        var app = new Vue({
+            el : '#app',
+            components : {
+                counter : counter
+            }
+        })
+    </script>
+</body>
+</html>
