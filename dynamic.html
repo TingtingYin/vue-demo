@@ -14,10 +14,10 @@
     </div>
     <script>
         Vue.component('one',{
-            template : '<div>one</div>'
+            template : '<div v-once>one</div>'
         })
         Vue.component('two',{
-            template : '<div>two</div>'
+            template : '<div v-once>two</div>'
         })
         var root = new Vue({
             el : '#root',
