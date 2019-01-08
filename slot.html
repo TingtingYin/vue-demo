@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <child content="<p>添加的标签</p>"></child>
+    </div>
+    <script>
+        Vue.component('child',{
+            props : ['content'],
+            template : '<div><p>文章</p><div v-html="this.content"></div></div>'
+        })
+        var app = new Vue({
+            el : '#app'
+        })
+    </script>
+</body>
+</html>
