@@ -16,11 +16,11 @@
                 transform: scale(1);
             }
         }
-        .fade-enter-active{
+        .active{
             transform-origin: left center;
             animation: bounce-in 1s;
         }
-        .fade-leave-active{
+        .leave{
             transform-origin: left center;
             animation: bounce-in 1s reverse;
         }
@@ -29,7 +29,9 @@
 
 <body>
 <div id="root">
-    <transition name="fade">
+    <transition name="fade"
+    enter-active-class="active"
+    leave-active-class="leave">
         <div v-if="show">hello yin</div>
     </transition>
 

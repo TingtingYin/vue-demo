@@ -161,4 +161,4 @@ https://cn.vuejs.org/v2/guide/
  如果transition name='fade',则这里可以写成.fade-enter
 43. vue使用animate.css库
     - @keyframes的bounce动画
-44. 
+44. 动画的样式名称可以自定义
