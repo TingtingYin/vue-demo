@@ -145,3 +145,4 @@ https://cn.vuejs.org/v2/guide/
     pros特性：父向子传递的属性是不会在便签显示的，
     比如：connt="12a555"
 35. 给组件绑定原生事件:@click.native
+36. 非父子组件间传值（Bus/总线/发布订阅模式/观察者模式）

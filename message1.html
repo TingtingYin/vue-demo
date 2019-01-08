@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message1</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <child content="YIN"></child>
+        <child content="TINGTING"></child>
+        <child content="TINGTING1"></child>
+    </div>
+    <script>
+        Vue.prototype.bus = new Vue();
+        Vue.component('child',{
+            data : function(){
+                return{
+                    selfContent : this.content
+                }
+            },
+            props : {
+                content : String
+            },
+            template : '<div @click="click">{{selfContent}}</div>',
+            methods : {
+                click : function () {
+                    this.bus.$emit('change',this.content);
+                }
+            },
+            mounted : function () {
+                var this_ = this;
+                this.bus.$on('change',function (msg) {
+                    this_.selfContent = msg;
+                })
+            }
+        })
+        var app = new Vue({
+            el : '#app'
+        })
+    </script>
+</body>
+</html>
