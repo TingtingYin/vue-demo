@@ -17,7 +17,12 @@
     </div>
     <script>
         Vue.component('row',{
-            template : '<tr><td>wo</td></tr>'
+            data : function(){
+                return{
+                    content : 'this is the content'
+                }
+            },
+            template : '<tr><td>{{content}}</td></tr>'
         })
         var app = new Vue({
             el : '#app'

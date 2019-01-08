@@ -127,4 +127,5 @@ https://cn.vuejs.org/v2/guide/
     ```
     
    > 原因：h5的规范里，要求table里要有tbody,
-   tbody里要有tr
+   tbody里要有tr. <select>,<ul>等也是这样的问题
+28. 子组件的data是个function
