@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tbody>
+               <tr is="row"></tr>
+               <tr is="row"></tr>
+               <tr is="row"></tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        Vue.component('row',{
+            template : '<tr><td>wo</td></tr>'
+        })
+        var app = new Vue({
+            el : '#app'
+        })
+    </script>
+</body>
+</html>

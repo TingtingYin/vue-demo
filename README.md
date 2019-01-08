@@ -86,3 +86,45 @@ https://cn.vuejs.org/v2/guide/
     Vue.set(vm.list,1,5): 索引是1的值改为5
     vm.$set(vm.list,1,5)
     ```
+27. table的问题
+    代码：
+    ```
+    <body>
+        <div id="app">
+            <table>
+                <tbody>
+                    <row></row>
+                    <row></row>
+                    <row></row>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            Vue.component('row',{
+                template : '<tr><td>wo</td></tr>'
+            })
+            var app = new Vue({
+                el : '#app'
+            })
+        </script>
+    </body>
+    ```
+
+    显示结果为：
+
+    ```
+    <body>
+        <div id="app">
+        <tr><td>wo</td></tr>
+        <tr><td>wo</td></tr>
+        <tr><td>wo</td></tr>
+        <table>
+            <tbody></tbody>
+        </table>
+        </div>
+    
+    </body>
+    ```
+    
+   > 原因：h5的规范里，要求table里要有tbody,
+   tbody里要有tr
