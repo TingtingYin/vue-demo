@@ -151,4 +151,4 @@ https://cn.vuejs.org/v2/guide/
     <div v-html="this.content"></div>
     这里不能用template
     ```
-38.
+38. slot-父向子传递dom

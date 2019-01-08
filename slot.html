@@ -7,12 +7,14 @@
 </head>
 <body>
     <div id="app">
-        <child content="<p>添加的标签</p>"></child>
+        <child>
+           <div class="header" slot="header">HEADER</div>
+            <div class="footer" slot="footer">FOOTER</div>
+        </child>
     </div>
     <script>
         Vue.component('child',{
-            props : ['content'],
-            template : '<div><p>文章</p><div v-html="this.content"></div></div>'
+            template : '<div><slot name="header"><h1>默认header</h1></slot><p>文章</p><slot name="footer"></slot></div>'
         })
         var app = new Vue({
             el : '#app'
