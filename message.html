@@ -7,8 +7,9 @@
 </head>
 <body>
     <div id="app">
-        <counter :count="1"></counter>
-        <counter :count="2"></counter>
+        <counter :count="1" @sum="sumData"></counter>
+        <counter :count="2" @sum="sumData"></counter>
+        <div>{{sum}}</div>
     </div>
     <script>
         var counter = {
@@ -21,14 +22,23 @@
             template : '<div @click="add">{{num}}</div>',
             methods : {
                 add : function () {
-                    this.num ++;
+                    this.num += 2;
+                    this.$emit('sum',2)
                 }
             }
         }
         var app = new Vue({
             el : '#app',
+            data : {
+                sum : 3
+            },
             components : {
                 counter : counter
+            },
+            methods : {
+                sumData : function (step) {
+                    this.sum += step;
+                }
             }
         })
     </script>
