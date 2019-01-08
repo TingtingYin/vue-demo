@@ -67,12 +67,14 @@ https://cn.vuejs.org/v2/guide/
     ```
 23. list中最好设置一个唯一的key,性能最高，最好不要用index
 24. list中通过下标操作数组，页面中的数据是不会变的
-```
-什么情况下改变数组时页面也跟着变化？
-1. 用变异方法，比如splice，pop,push
-2. 改变数组的引用
-3. set方法
-```
+    
+    什么情况下改变数组时页面也跟着变化？
+    - 用变异方法，比如splice，pop,push
+    - 改变数组的引用
+    - set方法
+    ``````
+
+
 25. template与div的区别
     - template标签不显示
 26. 对象循环 ： 添加对象某个属性，页面不会变。
@@ -126,6 +128,8 @@ https://cn.vuejs.org/v2/guide/
     </body>
     ```
     
-   > 原因：h5的规范里，要求table里要有tbody,
-   tbody里要有tr. <select>,<ul>等也是这样的问题
+    原因：h5的规范里，要求table里要有tbody,
+   tbody里要有tr,select,ul等也是这样的问题
+
 28. 子组件的data是个function
+29. vue中怎么操作dom
