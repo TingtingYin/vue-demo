@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+    <script src="vue.js"></script>
+    <style>
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .fade-enter-active{
+            transform-origin: left center;
+            animation: bounce-in 1s;
+        }
+        .fade-leave-active{
+            transform-origin: left center;
+            animation: bounce-in 1s reverse;
+        }
+    </style>
+</head>
+
+<body>
+<div id="root">
+    <transition name="fade">
+        <div v-if="show">hello yin</div>
+    </transition>
+
+    <button @click="click">切换</button>
+</div>
+<script>
+    var root = new Vue({
+        el : '#root',
+        data : {
+            show : true
+        },
+        methods : {
+            click : function () {
+                this.show = !this.show;
+            }
+        }
+    })
+</script>
+</body>
+</html>
