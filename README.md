@@ -144,4 +144,4 @@ https://cn.vuejs.org/v2/guide/
 34. 组件参数校验细节
     pros特性：父向子传递的属性是不会在便签显示的，
     比如：connt="12a555"
-35. 
+35. 给组件绑定原生事件:@click.native
