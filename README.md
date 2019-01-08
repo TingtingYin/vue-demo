@@ -132,4 +132,5 @@ https://cn.vuejs.org/v2/guide/
    tbody里要有tr,select,ul等也是这样的问题
 
 28. 子组件的data是个function
-29. vue中怎么操作dom
+29. vue中怎么操作dom-div
+30. vue中怎么操作dom-自定义组件

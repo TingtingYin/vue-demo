@@ -8,13 +8,36 @@
 <body>
     <div id="app">
         <div ref="hi" @click="click">hello</div>
+        <counter ref="one" @sum="sumNum"></counter>
+        <counter ref="two" @sum="sumNum"></counter>
+        <div>{{sum}}</div>
     </div>
     <script>
+        Vue.component('counter',{
+            data : function(){
+                return{
+                    number : 0
+                }
+            },
+            template : '<div @click="add">{{number}}</div>',
+            methods : {
+                add : function () {
+                    this.number ++;
+                    this.$emit('sum')
+                }
+            }
+        })
         var app = new Vue({
             el : '#app',
+            data : {
+                sum : 0
+            },
             methods : {
                 click : function () {
                     console.log(this.$refs.hi.outerHTML);
+                },
+                sumNum : function () {
+                    this.sum = this.$refs.one.number + this.$refs.two.number;
                 }
             }
         })
