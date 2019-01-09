@@ -167,4 +167,6 @@ https://cn.vuejs.org/v2/guide/
     - （解决第一次显示没有动画）
     - 同时使用过渡和动画( type="transition"以transition设定的时常为准，这里是3s,而animate.css默认时常为1s)
     - 自定义动画时长（到了时间，动画加的class才会消失）
-47. 
+47. 使用js实现动画
+    - @before-enter ： 从没有到有的时候触发
+48. 
