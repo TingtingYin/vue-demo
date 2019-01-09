@@ -179,4 +179,5 @@ https://cn.vuejs.org/v2/guide/
     - mode="in-out" "out-in"等
 49. 动态组件-动画
 48. 列表-过渡动画
-49. 动画封装1
+49. 动画封装.enter
+50. 动画封装2-@before-enter

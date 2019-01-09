@@ -5,14 +5,7 @@
     <title>animate</title>
     <script src="vue.js"></script>
     <link rel="stylesheet" href="animate.css">
-    <style>
-        .v-enter, .v-leave-to{
-            opacity : 0
-        }
-        .v-enter-active, .v-leave-active{
-            transition: opacity 1s;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -29,7 +22,19 @@
 <script>
    Vue.component('fade',{
        props : ['show'],
-       template : '<transition><slot v-if="show"></slot></transition>'
+       template : '<transition @before-enter="handleBeforeEnter"' +
+       ' @enter="handleEnter"><slot v-if="show"></slot></transition>',
+       methods : {
+           handleBeforeEnter : function (el) {
+               el.style.color = 'red'
+           },
+           handleEnter : function (el,done) {
+               setTimeout(()=>{
+                  el.style.color = 'green';
+                  done();
+               },2000)
+           }
+       }
    });
     var root = new Vue({
         el : '#root',
