@@ -4,34 +4,14 @@
     <meta charset="UTF-8">
     <title>animate</title>
     <script src="vue.js"></script>
-    <style>
-        @keyframes bounce-in {
-            0% {
-                transform: scale(0);
-            }
-            50% {
-                transform: scale(1.5);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        .active{
-            transform-origin: left center;
-            animation: bounce-in 1s;
-        }
-        .leave{
-            transform-origin: left center;
-            animation: bounce-in 1s reverse;
-        }
-    </style>
+    <link rel="stylesheet" href="animate.css">
 </head>
 
 <body>
 <div id="root">
     <transition name="fade"
-    enter-active-class="active"
-    leave-active-class="leave">
+    enter-active-class="animated swing"
+    leave-active-class="animated shake">
         <div v-if="show">hello yin</div>
     </transition>
 
