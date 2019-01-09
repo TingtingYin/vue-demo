@@ -169,4 +169,8 @@ https://cn.vuejs.org/v2/guide/
     - 自定义动画时长（到了时间，动画加的class才会消失）
 47. 使用js实现动画
     - @before-enter ： 从没有到有的时候触发
+    - @enter
+    - @after-enter
+    - 效果： 2秒后变绿，4秒后变黑
+    ------- leave同上
 48. 

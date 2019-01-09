@@ -10,7 +10,11 @@
 <body>
 <!--:duration="5000"-->
 <div id="root">
-    <transition name="fade" @before-enter="handleBeforeEnter">
+    <transition name="fade"
+                @before-enter="handleBeforeEnter"
+                @enter="handleEnter"
+                @after-enter="handleAfterEnter"
+    >
         <div v-if="show">hello yin</div>
     </transition>
 
@@ -28,6 +32,18 @@
             },
             handleBeforeEnter : function (el) {
                 el.style.color = 'red'
+            },
+            handleEnter : function (el,done) {
+
+                setTimeout(() =>{
+                    el.style.color='green'
+                },2000)
+                setTimeout(() =>{
+                   done()
+            },4000)
+            },
+            handleAfterEnter : function (el) {
+                el.style.color = '#000'
             }
         }
     })
