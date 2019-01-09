@@ -174,4 +174,6 @@ https://cn.vuejs.org/v2/guide/
     - 效果： 2秒后变绿，4秒后变黑
     ------- leave同上
     - 使用velocity.js实现动画
-48. 
+48. 多个元素的动画
+    - 由于组件的复用，切换的时候动画会失效，要用key
+    - mode="in-out" "out-in"等

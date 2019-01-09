@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <title>animate</title>
     <script src="vue.js"></script>
-    <script src="velocity.min.js"></script>
     <link rel="stylesheet" href="animate.css">
+    <style>
+        .v-enter, .v-leave-to{
+            opacity : 0
+        }
+        .v-enter-active, .v-leave-active{
+            transition: opacity 1s;
+        }
+    </style>
 </head>
 
 <body>
 <!--:duration="5000"-->
 <div id="root">
-    <transition name="fade"
-                @before-enter="handleBeforeEnter"
-                @enter="handleEnter"
-                @after-enter="handleAfterEnter"
+    <transition mode="out-in"
+
     >
-        <div v-if="show">hello yin</div>
+        <div v-if="show" key="hello">hello yin</div>
+        <div v-else key="bye">Bye yin</div>
     </transition>
 
     <button @click="click">切换</button>
@@ -30,20 +36,8 @@
         methods : {
             click : function () {
                 this.show = !this.show;
-            },
-            handleBeforeEnter : function (el) {
-                el.style.opacity = 0
-            },
-            handleEnter : function (el,done) {
-                Velocity(el,{opacity:1},{
-                    duration : 1000,
-                    complete : done
-                })
-
-            },
-            handleAfterEnter : function (el) {
-                console.log('动画结束')
             }
+
         }
     })
 </script>
