@@ -18,25 +18,28 @@
 <body>
 <!--:duration="5000"-->
 <div id="root">
-    <transition-group>
-        <div v-for="item in list" :key="item.id">{{item.text}}</div>
-    </transition-group>
-    <button @click="click">添加</button>
+   <fade :show="show">
+       <div>hello yin</div>
+   </fade>
+    <fade :show="show">
+        <h1>hello yin</h1>
+    </fade>
+    <button @click="click">切换</button>
 </div>
 <script>
-    var count = 0;
+   Vue.component('fade',{
+       props : ['show'],
+       template : '<transition><slot v-if="show"></slot></transition>'
+   });
     var root = new Vue({
         el : '#root',
         data : {
-            list : []
+           show : false
         },
         methods : {
-            click : function () {
-                this.list.push({
-                    id : count++,
-                    text : 'hello yin'
-                })
-            }
+           click : function () {
+               this.show = !this.show;
+           }
 
         }
     })
