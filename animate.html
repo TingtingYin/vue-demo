@@ -5,14 +5,23 @@
     <title>animate</title>
     <script src="vue.js"></script>
     <link rel="stylesheet" href="animate.css">
+    <style>
+        .fade-enter, .fade-leave-to{
+            opacity : 0
+        }
+        .fade-enter-active, .fade-leave-active{
+            transition: opacity 3s;
+        }
+    </style>
 </head>
 
 <body>
 <div id="root">
     <transition name="fade"
+    type="transition"
     appear
-    enter-active-class="animated swing"
-    leave-active-class="animated shake"
+    enter-active-class="animated swing fade-enter-active"
+    leave-active-class="animated shake fade-leave-active"
     appear-active-class="animated bounceIn">
         <div v-if="show">hello yin</div>
     </transition>

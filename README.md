@@ -165,4 +165,5 @@ https://cn.vuejs.org/v2/guide/
 45. 使用animate.css库
 46. vue中同时使用过渡和动画
     - （解决第一次显示没有动画）
+    - 同时使用过渡和动画( type="transition"以transition设定的时常为准，这里是3s,而animate.css默认时常为1s)
 47. 
