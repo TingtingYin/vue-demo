@@ -162,3 +162,7 @@ https://cn.vuejs.org/v2/guide/
 43. vue使用animate.css库
     - @keyframes的bounce动画
 44. 动画的样式名称可以自定义
+45. 使用animate.css库
+46. vue中同时使用过渡和动画
+    - （解决第一次显示没有动画）
+47. 

@@ -10,8 +10,10 @@
 <body>
 <div id="root">
     <transition name="fade"
+    appear
     enter-active-class="animated swing"
-    leave-active-class="animated shake">
+    leave-active-class="animated shake"
+    appear-active-class="animated bounceIn">
         <div v-if="show">hello yin</div>
     </transition>
 
