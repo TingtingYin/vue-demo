@@ -18,27 +18,24 @@
 <body>
 <!--:duration="5000"-->
 <div id="root">
-    <transition mode="out-in">
-                <component :is="type"></component>
-    </transition>
-
-    <button @click="click">切换</button>
+    <transition-group>
+        <div v-for="item in list" :key="item.id">{{item.text}}</div>
+    </transition-group>
+    <button @click="click">添加</button>
 </div>
 <script>
-    Vue.component('child-one',{
-       template : '<div>child-one</div>'
-    })
-    Vue.component('child-two',{
-        template : '<div>child-two</div>'
-    })
+    var count = 0;
     var root = new Vue({
         el : '#root',
         data : {
-            type : 'child-one'
+            list : []
         },
         methods : {
             click : function () {
-                this.type = this.type === 'child-one'?'child-two':'child-one'
+                this.list.push({
+                    id : count++,
+                    text : 'hello yin'
+                })
             }
 
         }
