@@ -173,4 +173,5 @@ https://cn.vuejs.org/v2/guide/
     - @after-enter
     - 效果： 2秒后变绿，4秒后变黑
     ------- leave同上
+    - 使用velocity.js实现动画
 48. 
