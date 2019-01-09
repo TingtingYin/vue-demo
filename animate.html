@@ -18,24 +18,27 @@
 <body>
 <!--:duration="5000"-->
 <div id="root">
-    <transition mode="out-in"
-
-    >
-        <div v-if="show" key="hello">hello yin</div>
-        <div v-else key="bye">Bye yin</div>
+    <transition mode="out-in">
+                <component :is="type"></component>
     </transition>
 
     <button @click="click">切换</button>
 </div>
 <script>
+    Vue.component('child-one',{
+       template : '<div>child-one</div>'
+    })
+    Vue.component('child-two',{
+        template : '<div>child-two</div>'
+    })
     var root = new Vue({
         el : '#root',
         data : {
-            show : true
+            type : 'child-one'
         },
         methods : {
             click : function () {
-                this.show = !this.show;
+                this.type = this.type === 'child-one'?'child-two':'child-one'
             }
 
         }

@@ -177,3 +177,4 @@ https://cn.vuejs.org/v2/guide/
 48. 多个元素的动画
     - 由于组件的复用，切换的时候动画会失效，要用key
     - mode="in-out" "out-in"等
+49. 动态组件的动画
