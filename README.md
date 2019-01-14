@@ -181,3 +181,11 @@ https://cn.vuejs.org/v2/guide/
 48. 列表-过渡动画
 49. 动画封装.enter
 50. 动画封装2-@before-enter
+51. 项目预热
+    - 安装node.js
+    - node-v
+    - npm -v
+    - git --version
+    - 公钥生成，window要用git bash执行终端命令
+    - 参考vue官网的安装，v-cli , project
+52. 接着'vue-去哪儿网'
